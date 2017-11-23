@@ -1,0 +1,17 @@
+version: "2"
+
+services:
+  grakn:
+    image: graknlabs/grakn
+    container_name: grakn
+    ports:
+      - "4567:4567"
+      - "9042:9042"
+      - "9160:9160"
+    volumes:
+      - grakn_db:/grakn/db/
+    tty: true
+    stdin_open: true
+volumes:
+  grakn_db:
+    driver: local

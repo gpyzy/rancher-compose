@@ -1,0 +1,15 @@
+version: '2'
+services:
+  jenkins:
+    image: jenkinsci/blueocean
+    stdin_open: true
+    tty: true
+    volumes:
+    - /Users/jony/rancher_shared/jenkins/jenkins_home:/var/jenkins_home
+    - /Users/jony/rancher_shared/jenkins/home:/home
+    - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+    - 8002:8080
+    - 50000:50000
+    user: root
+          
